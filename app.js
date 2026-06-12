@@ -2,6 +2,14 @@ const items = document.querySelectorAll(".item");
 const editorPanel = document.getElementById("editorPanel");
 const priceEditor = document.getElementById("priceEditor");
 
+const isAdmin = window.location.search.includes("admin=true");
+
+const editButton = document.querySelector(".edit-btn");
+
+if (!isAdmin && editButton) {
+  editButton.style.display = "none";
+}
+
 let prices = JSON.parse(localStorage.getItem("kuboPrices")) || {};
 
 function renderPrices() {

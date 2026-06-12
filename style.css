@@ -545,3 +545,17 @@ footer{
     font-size:22px;
   }
 }
+@media print {
+
+  .edit-btn,
+  .editor-panel {
+    display: none !important;
+  }
+
+}
+@media print {
+  .edit-btn,
+  .editor-panel {
+    display: none !important;
+  }
+}
