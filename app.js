@@ -12,39 +12,44 @@ if (!isAdmin && editButton) {
 let savedMenu = JSON.parse(localStorage.getItem("kuboMenuData")) || {};
 
 function renderMenu() {
-  items.forEach(item => {
-    const originalName = item.dataset.name;
+  items.forEach((item, index) => {
+    const originalName = item.dataset.name || `item-${index}`;
     const span = item.querySelector("span");
-
     const saved = savedMenu[originalName];
 
-    if (saved?.nombre) {
-      item.childNodes[0].textContent = saved.nombre + " ";
-    }
+    const nombreFinal = saved?.nombre || originalName;
+    const precioFinal = saved?.precio || "$ ______";
 
-    span.textContent = saved?.precio || "$ ______";
+    item.innerHTML = `${nombreFinal} <span>${precioFinal}</span>`;
   });
 }
 
 function openEditor() {
   priceEditor.innerHTML = "";
 
-  items.forEach(item => {
-    const originalName = item.dataset.name;
+  items.forEach((item, index) => {
+    const originalName = item.dataset.name || `item-${index}`;
     const saved = savedMenu[originalName] || {};
 
     priceEditor.innerHTML += `
-      <label>
-        Producto
-        <input type="text" value="${saved.nombre || originalName}" data-original="${originalName}" data-type="nombre">
-      </label>
+      <div class="edit-group">
+        <label>Producto</label>
+        <input 
+          type="text" 
+          value="${saved.nombre || originalName}" 
+          data-original="${originalName}" 
+          data-type="nombre"
+        >
 
-      <label>
-        Precio
-        <input type="text" value="${saved.precio || ""}" data-original="${originalName}" data-type="precio">
-      </label>
-
-      <hr>
+        <label>Precio</label>
+        <input 
+          type="text" 
+          value="${saved.precio || ""}" 
+          data-original="${originalName}" 
+          data-type="precio"
+          placeholder="$ ______"
+        >
+      </div>
     `;
   });
 

@@ -588,3 +588,15 @@ footer{
     display:none !important;
   }
 }
+.edit-group{
+  border-bottom:1px solid rgba(255,255,255,.15);
+  padding-bottom:14px;
+  margin-bottom:18px;
+}
+
+.edit-group label{
+  display:block;
+  margin:8px 0 5px;
+  color:#ff4b4b;
+  font-weight:700;
+}
