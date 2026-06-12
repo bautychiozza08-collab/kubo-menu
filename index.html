@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KUBO - Carta Comidas</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+<div class="page">
+  <div class="stadium-line"></div>
+
+  <button class="edit-btn" onclick="openEditor()">Editar precios</button>
+
+  <div class="editor-panel" id="editorPanel">
+    <h2>Editar precios</h2>
+    <div id="priceEditor"></div>
+
+    <button onclick="savePrices()" class="save-btn">Guardar precios</button>
+    <button onclick="closeEditor()" class="close-btn">Cerrar</button>
+  </div>
+
+  <header>
+    <h1>KUBO</h1>
+    <h2>BAR & COCINA</h2>
+
+    <div class="slogan">
+      BUENA COMIDA · BUENA GENTE · BUENOS MOMENTOS
+    </div>
+
+    <div class="separator"></div>
+  </header>
+
+  <div class="grid">
+
+    <section>
+      <h3>PARA PICAR</h3>
+
+      <div class="item" data-name="Nachos Kubo">Nachos Kubo <span>$ ______</span></div>
+      <div class="item" data-name="Tequeños (6 un.)">Tequeños (6 un.) <span>$ ______</span></div>
+      <div class="item" data-name="Chicken Fingers">Chicken Fingers <span>$ ______</span></div>
+      <div class="item" data-name="Mozzarella Sticks">Mozzarella Sticks <span>$ ______</span></div>
+      <div class="item" data-name="Dúo de Empanadas">Dúo de Empanadas <span>$ ______</span></div>
+      <div class="item" data-name="Papas Clásicas">Papas Clásicas <span>$ ______</span></div>
+      <div class="item featured" data-name="Papas Kubo">⭐ Papas Kubo <span>$ ______</span></div>
+
+      <h3>TABLAS</h3>
+
+      <div class="item" data-name="Tabla de Fiambres">Tabla de Fiambres <span>$ ______</span></div>
+      <div class="item" data-name="Tabla Caliente">Tabla Caliente <span>$ ______</span></div>
+    </section>
+
+    <section>
+      <h3>BURGERS</h3>
+
+      <div class="item" data-name="Clásica">Clásica <span>$ ______</span></div>
+      <div class="item" data-name="Blue Burger">Blue Burger <span>$ ______</span></div>
+      <div class="item featured" data-name="Kubo Burger">⭐ Kubo Burger <span>$ ______</span></div>
+      <div class="item" data-name="Veggie Burger">Veggie Burger <span>$ ______</span></div>
+
+      <h3>ENTREPANES</h3>
+
+      <div class="item" data-name="Mila Kubo">Mila Kubo <span>$ ______</span></div>
+      <div class="item" data-name="Crispy Chicken">Crispy Chicken <span>$ ______</span></div>
+      <div class="item" data-name="Lomo Kubo">Lomo Kubo <span>$ ______</span></div>
+      <div class="item" data-name="Veggie">Veggie <span>$ ______</span></div>
+
+      <h3>PIZZAS</h3>
+
+      <div class="item" data-name="Muzzarella">Muzzarella <span>$ ______</span></div>
+      <div class="item" data-name="Napolitana">Napolitana <span>$ ______</span></div>
+      <div class="item" data-name="Jamón Crudo y Rúcula">Jamón Crudo y Rúcula <span>$ ______</span></div>
+      <div class="item featured" data-name="Burrata Kubo">⭐ Burrata Kubo <span>$ ______</span></div>
+    </section>
+
+    <section>
+      <h3>ENSALADAS</h3>
+
+      <div class="item" data-name="César">César <span>$ ______</span></div>
+      <div class="item" data-name="Burrata Salad">Burrata Salad <span>$ ______</span></div>
+      <div class="item" data-name="Verde Kubo">Verde Kubo <span>$ ______</span></div>
+
+      <h3>PASTAS</h3>
+
+      <div class="item" data-name="Ñoquis">Ñoquis <span>$ ______</span></div>
+      <div class="item" data-name="Sorrentinos">Sorrentinos <span>$ ______</span></div>
+
+      <h3>PRINCIPALES</h3>
+
+      <div class="item" data-name="Milanesa Clásica">Milanesa Clásica <span>$ ______</span></div>
+      <div class="item featured" data-name="Milanesa Kubo">⭐ Milanesa Kubo <span>$ ______</span></div>
+      <div class="item" data-name="Suprema Crispy Kubo">Suprema Crispy Kubo <span>$ ______</span></div>
+      <div class="item" data-name="Bife de Chorizo">Bife de Chorizo <span>$ ______</span></div>
+      <div class="item featured" data-name="Costillar de Asado">⭐ Costillar de Asado <span>$ ______</span></div>
+
+      <h3>POSTRES</h3>
+
+      <div class="item" data-name="Chocotorta Clásica">Chocotorta Clásica <span>$ ______</span></div>
+      <div class="item" data-name="Cheesecake Frutos Rojos">Cheesecake Frutos Rojos <span>$ ______</span></div>
+      <div class="item" data-name="Crème Brûlée">Crème Brûlée <span>$ ______</span></div>
+      <div class="item" data-name="Budín de Pan">Budín de Pan <span>$ ______</span></div>
+    </section>
+
+  </div>
+
+  <footer>
+    COCINA • TRAGOS • NOCHES QUE SE QUEDAN
+  </footer>
+
+</div>
+
+<script src="app.js"></script>
+
+</body>
+</html>

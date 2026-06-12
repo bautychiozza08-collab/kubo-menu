@@ -1,0 +1,479 @@
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+body{
+  background:#111;
+  font-family:'Montserrat',sans-serif;
+  display:flex;
+  justify-content:center;
+  padding:30px;
+}
+
+.page{
+  width:210mm;
+  min-height:297mm;
+
+  background:
+    radial-gradient(circle at top left, rgba(255,0,0,.20), transparent 25%),
+    radial-gradient(circle at bottom right, rgba(255,0,0,.15), transparent 30%),
+    linear-gradient(135deg,#050505,#0f0f0f);
+
+  color:white;
+  padding:35px;
+
+  border:2px solid #ff2b2b;
+
+  position:relative;
+  overflow:hidden;
+
+  box-shadow:
+    0 0 50px rgba(255,0,0,.15);
+}
+
+/* Marco interior */
+
+.page::before{
+  content:"";
+
+  position:absolute;
+
+  top:15px;
+  left:15px;
+  right:15px;
+  bottom:15px;
+
+  border:1px solid rgba(255,43,43,.25);
+
+  pointer-events:none;
+}
+
+/* Cuadrícula elegante */
+
+.page::after{
+  content:"";
+
+  position:absolute;
+  inset:0;
+
+  background:
+    linear-gradient(rgba(255,255,255,.02) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,.02) 1px, transparent 1px);
+
+  background-size:40px 40px;
+
+  pointer-events:none;
+}
+
+header,
+.grid,
+footer{
+  position:relative;
+  z-index:5;
+}
+
+header{
+  text-align:center;
+  margin-bottom:20px;
+}
+
+/* KUBO */
+
+h1{
+  font-family:'Bebas Neue';
+  font-size:95px;
+
+  color:#ff2020;
+
+  letter-spacing:6px;
+
+  text-shadow:
+    0 0 5px #ffffff,
+    0 0 15px #ffffff,
+    0 0 25px rgba(255,255,255,.5),
+    0 0 50px rgba(255,0,0,.5);
+}
+
+h2{
+  font-family:'Bebas Neue';
+
+  font-size:34px;
+
+  letter-spacing:4px;
+
+  margin-top:-15px;
+
+  color:white;
+}
+
+/* slogan */
+
+.slogan{
+  margin:15px auto 0;
+
+  width:max-content;
+
+  padding:10px 20px;
+
+  border-top:1px solid rgba(255,43,43,.5);
+  border-bottom:1px solid rgba(255,43,43,.5);
+
+  color:#d0d0d0;
+
+  font-size:12px;
+
+  letter-spacing:3px;
+}
+
+/* Grid principal */
+
+.grid{
+  display:grid;
+
+  grid-template-columns:1fr 1fr 1fr;
+
+  gap:20px;
+}
+
+/* Tarjetas */
+
+section{
+
+  background:rgba(255,255,255,.03);
+
+  border:1px solid rgba(255,43,43,.45);
+
+  border-radius:18px;
+
+  padding:16px;
+
+  backdrop-filter:blur(5px);
+
+  box-shadow:
+    inset 0 0 20px rgba(255,0,0,.05),
+    0 0 20px rgba(255,0,0,.05);
+
+  transition:.3s;
+}
+
+section:hover{
+
+  transform:translateY(-3px);
+
+  box-shadow:
+    inset 0 0 20px rgba(255,0,0,.08),
+    0 0 30px rgba(255,0,0,.15);
+}
+
+/* Titulos */
+
+h3{
+
+  font-family:'Bebas Neue';
+
+  font-size:28px;
+
+  color:#ff2b2b;
+
+  letter-spacing:2px;
+
+  margin-bottom:12px;
+
+  padding-bottom:4px;
+
+  border-bottom:1px solid rgba(255,43,43,.4);
+
+  text-shadow:
+    0 0 3px #ffffff,
+    0 0 8px rgba(255,255,255,.7),
+    0 0 15px rgba(255,255,255,.4);
+}
+
+/* Productos */
+
+.item{
+
+  display:flex;
+
+  justify-content:space-between;
+
+  align-items:center;
+
+  gap:10px;
+
+  padding:7px 0;
+
+  font-size:13px;
+
+  border-bottom:1px dashed rgba(255,255,255,.10);
+}
+
+.item:last-child{
+  border:none;
+}
+
+/* precios */
+
+.item span{
+
+  color:#ff8080;
+
+  font-weight:800;
+
+  white-space:nowrap;
+}
+
+/* Footer */
+
+footer{
+
+  margin-top:30px;
+
+  text-align:center;
+
+  font-family:'Bebas Neue';
+
+  font-size:26px;
+
+  letter-spacing:3px;
+
+  color:#ff2b2b;
+
+  text-shadow:
+    0 0 5px #fff,
+    0 0 10px rgba(255,255,255,.5),
+    0 0 20px rgba(255,0,0,.4);
+}
+
+/* PDF */
+
+@media print{
+
+  body{
+    padding:0;
+    background:white;
+  }
+
+  .page{
+    width:210mm;
+    min-height:297mm;
+    border:none;
+    box-shadow:none;
+  }
+
+}
+.stadium-line{
+  height:4px;
+  width:100%;
+
+  background:#ff2020;
+
+  box-shadow:
+    0 0 10px #ff2020,
+    0 0 20px #ff2020,
+    0 0 40px #ff2020;
+
+  margin-bottom:20px;
+}
+.separator{
+  height:2px;
+  width:75%;
+  margin:22px auto 0;
+  background:#ff2020;
+  box-shadow:
+    0 0 10px #ff2020,
+    0 0 25px rgba(255,32,32,.8);
+}
+
+.featured{
+  color:#ffd36b;
+  font-weight:800;
+}
+
+.featured span{
+  color:#ffd36b;
+}
+
+@media print{
+  section:hover{
+    transform:none;
+  }
+}
+html, body{
+    margin:0;
+    padding:0;
+}
+
+.page{
+    width:210mm;
+    height:297mm;
+    min-height:auto;
+
+    overflow:hidden;
+}
+
+footer{
+  margin-top:10px;
+  padding-bottom:5px;
+}
+@media print {
+
+  body{
+    background:#000 !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  .page{
+    background:#050505 !important;
+    color:white !important;
+    border:2px solid #ff2b2b !important;
+  }
+
+}
+@page{
+  size: A4;
+  margin: 0;
+}
+
+@media print{
+  html, body{
+    width:210mm;
+    height:297mm;
+    margin:0;
+    padding:0;
+    overflow:hidden;
+    background:#000 !important;
+    -webkit-print-color-adjust:exact;
+    print-color-adjust:exact;
+  }
+
+  body{
+    display:block;
+  }
+
+  .page{
+    width:210mm;
+    height:297mm;
+    min-height:297mm;
+    padding:18mm;
+    overflow:hidden;
+    transform: scale(.98);
+    transform-origin:top left;
+    border:none;
+    box-shadow:none;
+  }
+
+  footer{
+  margin-top:10px;
+  padding-bottom:5px;
+}
+
+  h1{
+    font-size:110px;
+}
+
+  h2{
+    font-size:26px;
+  }
+
+  h3{
+    font-size:32px;
+}
+
+  .item{
+    font-size:14px;
+    padding:5px 0;
+  }
+
+  .grid{
+    gap:14px;
+  }
+
+  section{
+    padding:12px;
+  }
+}
+.edit-btn{
+  position:fixed;
+  top:20px;
+  right:20px;
+  z-index:999;
+  padding:12px 18px;
+  background:#ff2020;
+  color:white;
+  border:none;
+  border-radius:10px;
+  font-weight:700;
+  cursor:pointer;
+}
+
+.editor-panel{
+  position:fixed;
+  top:0;
+  right:-420px;
+  width:400px;
+  height:100vh;
+  background:#111;
+  color:white;
+  z-index:9999;
+  padding:25px;
+  overflow:auto;
+  transition:.3s;
+  border-left:2px solid #ff2020;
+}
+
+.editor-panel.show{
+  right:0;
+}
+
+.editor-panel h2{
+  color:#ff2020;
+  margin-bottom:20px;
+}
+
+.editor-panel label{
+  display:block;
+  margin-bottom:14px;
+  font-size:14px;
+}
+
+.editor-panel input{
+  width:100%;
+  margin-top:6px;
+  padding:10px;
+  border-radius:8px;
+  border:1px solid #ff2020;
+  background:#050505;
+  color:white;
+}
+
+.save-btn,
+.close-btn{
+  width:100%;
+  padding:12px;
+  margin-top:10px;
+  border:none;
+  border-radius:10px;
+  font-weight:700;
+  cursor:pointer;
+}
+
+.save-btn{
+  background:#ff2020;
+  color:white;
+}
+
+.close-btn{
+  background:#333;
+  color:white;
+}
+
+@media print{
+  .edit-btn,
+  .editor-panel{
+    display:none !important;
+  }
+}
