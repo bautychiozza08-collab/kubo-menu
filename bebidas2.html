@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KUBO - Carta Comidas</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+<div class="page">
+  <div class="stadium-line"></div>
+
+  <button class="edit-btn" onclick="openEditor()">Editar precios</button>
+
+  <div class="editor-panel" id="editorPanel">
+    <h2>Editar precios</h2>
+    <div id="priceEditor"></div>
+
+    <button onclick="savePrices()" class="save-btn">Guardar precios</button>
+    <button onclick="closeEditor()" class="close-btn">Cerrar</button>
+  </div>
+
+  <header>
+    <h1>KUBO</h1>
+    <h2>CARTA DE BEBIDAS</h2>
+
+    <div class="slogan">
+      BUENOS TRAGOS· BUENA GENTE · BUENOS MOMENTOS
+    </div>
+
+
+    <div class="separator"></div>
+  </header>
+
+  <div class="grid">
+
+  <section>
+    <h3>CERVEZAS</h3>
+    <div class="item" data-name="Quilmes">Quilmes <span>$ ______</span></div>
+    <div class="item" data-name="Stella">Stella <span>$ ______</span></div>
+    <div class="item" data-name="Patagonia IPA 24/7">Patagonia IPA 24/7 <span>$ ______</span></div>
+    <div class="item" data-name="Patagonia Amber">Patagonia Amber <span>$ ______</span></div>
+
+    <h3>ARTESANAL</h3>
+    <div class="item" data-name="Hormiga Negra Blonde">Hormiga Negra Blonde <span>$ ______</span></div>
+    <div class="item" data-name="Hormiga Negra American IPA">Hormiga Negra American IPA <span>$ ______</span></div>
+    <div class="item" data-name="Hormiga Negra Scottish">Hormiga Negra Scottish <span>$ ______</span></div>
+
+    <h3>PORRÓN</h3>
+    <div class="item" data-name="Corona">Corona <span>$ ______</span></div>
+    <div class="item" data-name="Corona sin alcohol">Corona sin alcohol <span>$ ______</span></div>
+    <div class="item" data-name="Stella sin alcohol">Stella sin alcohol <span>$ ______</span></div>
+    <div class="item" data-name="Balde de Coronas">Balde de Coronas <span>$ ______</span></div>
+    <div class="item" data-name="Michelob sin gluten">Michelob sin gluten <span>$ ______</span></div>
+  </section>
+
+  <section>
+    <h3>MEDIDAS</h3>
+
+    <div class="item" data-name="Beefeater">Beefeater <span>$ ______</span></div>
+    <div class="item" data-name="Tanqueray">Tanqueray <span>$ ______</span></div>
+    <div class="item" data-name="Tanqueray Sevilla/Royale">Tanqueray Sevilla/Royale <span>$ ______</span></div>
+    <div class="item" data-name="Hendricks">Hendricks <span>$ ______</span></div>
+    <div class="item" data-name="Monkey 47">Monkey 47 <span>$ ______</span></div>
+
+    <h3>WHISKY</h3>
+    <div class="item" data-name="Jim Beam White">Jim Beam White <span>$ ______</span></div>
+    <div class="item" data-name="Jack Daniel's Nº7">Jack Daniel's Nº7 <span>$ ______</span></div>
+    <div class="item" data-name="Jameson">Jameson <span>$ ______</span></div>
+    <div class="item" data-name="J&B">J&B <span>$ ______</span></div>
+    <div class="item" data-name="Johnnie Walker Red Label">Johnnie Walker Red Label <span>$ ______</span></div>
+    <div class="item" data-name="Johnnie Walker Black Label">Johnnie Walker Black Label <span>$ ______</span></div>
+    <div class="item" data-name="Monkey Shoulder">Monkey Shoulder <span>$ ______</span></div>
+
+    <h3>VODKA</h3>
+    <div class="item" data-name="Smirnoff">Smirnoff <span>$ ______</span></div>
+    <div class="item" data-name="Absolut">Absolut <span>$ ______</span></div>
+    <div class="item" data-name="Grey Goose">Grey Goose <span>$ ______</span></div>
+  </section>
+
+  <section>
+    <h3>TEQUILA</h3>
+    <div class="item" data-name="José Cuervo">José Cuervo <span>$ ______</span></div>
+    <div class="item" data-name="Tequila 1800">Tequila 1800 <span>$ ______</span></div>
+
+    <h3>RON</h3>
+    <div class="item" data-name="Havana Club 3 años">Havana Club 3 años <span>$ ______</span></div>
+    <div class="item" data-name="Havana Club 7 años">Havana Club 7 años <span>$ ______</span></div>
+    <div class="item" data-name="Bacardi Blanco">Bacardi Blanco <span>$ ______</span></div>
+    <div class="item" data-name="Zacapa 23">Zacapa 23 <span>$ ______</span></div>
+
+    <h3>LICORES</h3>
+    <div class="item" data-name="Baileys">Baileys <span>$ ______</span></div>
+    <div class="item" data-name="Licor 43">Licor 43 <span>$ ______</span></div>
+    <div class="item" data-name="Jagermeister">Jagermeister <span>$ ______</span></div>
+    <div class="item" data-name="Sheridans">Sheridans <span>$ ______</span></div>
+    <div class="item" data-name="Amaretto Disaronno">Amaretto Disaronno <span>$ ______</span></div>
+    <div class="item" data-name="Frangelico">Frangelico <span>$ ______</span></div>
+
+    <h3>VINOS</h3>
+    <div class="item" data-name="Tintos">Tintos <span>$ ______</span></div>
+    <div class="item" data-name="Rosé">Rosé <span>$ ______</span></div>
+    <div class="item" data-name="Blancos">Blancos <span>$ ______</span></div>
+    <div class="item" data-name="Espumantes">Espumantes <span>$ ______</span></div>
+    <div class="item featured" data-name="Veuve Clicquot">⭐ Veuve Clicquot <span>$ ______</span></div>
+  </section>
+
+</div>
+
+<script src="app.js"></script>
+
+</body>
+</html>

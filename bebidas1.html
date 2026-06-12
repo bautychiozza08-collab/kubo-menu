@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KUBO - Carta Comidas</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+<div class="page">
+  <div class="stadium-line"></div>
+
+  <button class="edit-btn" onclick="openEditor()">Editar precios</button>
+
+  <div class="editor-panel" id="editorPanel">
+    <h2>Editar precios</h2>
+    <div id="priceEditor"></div>
+
+    <button onclick="savePrices()" class="save-btn">Guardar precios</button>
+    <button onclick="closeEditor()" class="close-btn">Cerrar</button>
+  </div>
+
+  <header>
+    <h1>KUBO</h1>
+    <h2>CARTA DE BEBIDAS</h2>
+
+    <div class="slogan">
+      BUENOS TRAGOS· BUENA GENTE · BUENOS MOMENTOS
+    </div>
+
+    <div class="separator"></div>
+  </header>
+
+  <div class="grid">
+
+  <section>
+    <h3>SIN ALCOHOL</h3>
+
+    <div class="item" data-name="Agua sin gas">Agua sin gas <span>$ ______</span></div>
+    <div class="item" data-name="Agua con gas">Agua con gas <span>$ ______</span></div>
+    <div class="item" data-name="Lata Coca-Cola">Lata Coca-Cola <span>$ ______</span></div>
+    <div class="item" data-name="Speed">Speed <span>$ ______</span></div>
+    <div class="item" data-name="Limonada clásica">Limonada clásica <span>$ ______</span></div>
+    <div class="item" data-name="Limonada miel y jengibre">Limonada miel y jengibre <span>$ ______</span></div>
+    <div class="item" data-name="Limonada frutos rojos">Limonada frutos rojos <span>$ ______</span></div>
+    <div class="item" data-name="Limonada maracuyá">Limonada maracuyá <span>$ ______</span></div>
+    <div class="item" data-name="Pomelada">Pomelada <span>$ ______</span></div>
+
+    <h3>CÓCTELES DE AUTOR</h3>
+
+    <div class="item featured" data-name="Tiki-Taka">⭐ Tiki-Taka <span>$ ______</span></div>
+    <div class="item featured" data-name="Tarjeta Roja">⭐ Tarjeta Roja <span>$ ______</span></div>
+    <div class="item featured" data-name="La Fórmula Ganadora">⭐ La Fórmula Ganadora <span>$ ______</span></div>
+    <div class="item featured" data-name="Falso Nueve">⭐ Falso Nueve <span>$ ______</span></div>
+    <div class="item featured" data-name="Fútbol Champagne">⭐ Fútbol Champagne <span>$ ______</span></div>
+    <div class="item featured" data-name="Última Jugada">⭐ Última Jugada <span>$ ______</span></div>
+  </section>
+
+  <section>
+    <h3>CLÁSICOS</h3>
+
+    <div class="item" data-name="Bloody Mary">Bloody Mary <span>$ ______</span></div>
+    <div class="item" data-name="Aperol Spritz">Aperol Spritz <span>$ ______</span></div>
+    <div class="item" data-name="Tequila Sunrise">Tequila Sunrise <span>$ ______</span></div>
+    <div class="item" data-name="Cosmopolitan">Cosmopolitan <span>$ ______</span></div>
+    <div class="item" data-name="Garibaldi">Garibaldi <span>$ ______</span></div>
+    <div class="item" data-name="Negroni">Negroni <span>$ ______</span></div>
+    <div class="item" data-name="Fernet Cola">Fernet Cola <span>$ ______</span></div>
+    <div class="item" data-name="Gancia con Sprite">Gancia con Sprite <span>$ ______</span></div>
+    <div class="item" data-name="Gin Tonic Draft">Gin Tonic Draft <span>$ ______</span></div>
+    <div class="item" data-name="Caipirinha">Caipirinha <span>$ ______</span></div>
+    <div class="item" data-name="Caipiroska">Caipiroska <span>$ ______</span></div>
+    <div class="item" data-name="Mojito">Mojito <span>$ ______</span></div>
+    <div class="item" data-name="Cynar Julep">Cynar Julep <span>$ ______</span></div>
+    <div class="item" data-name="Margarita">Margarita <span>$ ______</span></div>
+    <div class="item" data-name="Margarita 1800">Margarita 1800 <span>$ ______</span></div>
+  </section>
+
+   <section>
+    <h3>+CLÁSICOS</h3>
+
+    <div class="item" data-name="Tinto de verano">Tinto de verano <span>$ ______</span></div>
+    <div class="item" data-name="Cuba Libre">Cuba Libre <span>$ ______</span></div>
+    <div class="item" data-name="Pisco Sour">Pisco Sour <span>$ ______</span></div>
+    <div class="item" data-name="Amaretto Sour">Amaretto Sour <span>$ ______</span></div>
+    <div class="item" data-name="Baileys Frozen">Baileys Frozen <span>$ ______</span></div>
+    <div class="item" data-name="Daiquiri Frozen">Daiquiri Frozen <span>$ ______</span></div>
+    <div class="item" data-name="Dry Martini">Dry Martini <span>$ ______</span></div>
+    <div class="item" data-name="Espresso Martini">Espresso Martini <span>$ ______</span></div>
+    <div class="item" data-name="Old Fashioned">Old Fashioned <span>$ ______</span></div>
+    <div class="item" data-name="Penicillin">Penicillin <span>$ ______</span></div>
+    <div class="item" data-name="Manhattan">Manhattan <span>$ _
+
+    </section>
+</div>
+
+<script src="app.js"></script>
+
+</body>
+</html>
