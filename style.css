@@ -559,3 +559,32 @@ footer{
     display: none !important;
   }
 }
+.page-break{
+    page-break-before: always;
+}
+
+@media print{
+
+    .page-break{
+        page-break-before: always;
+    }
+
+    .edit-btn,
+    .editor-panel{
+        display:none !important;
+    }
+}
+.page-break{
+  page-break-before: always;
+}
+
+@media print{
+  .page-break{
+    page-break-before: always;
+  }
+
+  .edit-btn,
+  .editor-panel{
+    display:none !important;
+  }
+}
