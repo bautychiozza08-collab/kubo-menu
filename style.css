@@ -1449,3 +1449,89 @@ footer{
 .grid section{
     min-height: 650px;
 }
+/* FIX PDF CELULAR - SACAR CUADROS BLANCOS */
+@media print {
+  h1,
+  h2,
+  h3,
+  footer {
+    text-shadow: none !important;
+    box-shadow: none !important;
+    background: transparent !important;
+  }
+
+  h1,
+  h3,
+  footer {
+    color: #ff2b2b !important;
+  }
+
+  h2,
+  .slogan {
+    color: #ffffff !important;
+  }
+
+  .stadium-line,
+  .separator {
+    box-shadow: none !important;
+  }
+
+  .featured,
+  .featured span {
+    color: #ffd36b !important;
+  }
+}
+/* AJUSTE PDF - QUE NO SE CORTE */
+@media print {
+  .page{
+    transform: scale(0.94) !important;
+    transform-origin: top center !important;
+  }
+
+  .grid{
+    gap: 8px !important;
+  }
+
+  section{
+    min-height: 0 !important;
+  }
+
+  .item{
+    font-size: 10px !important;
+    line-height: 1.15 !important;
+    padding: 2px 0 !important;
+  }
+
+  .item span{
+    font-size: 10px !important;
+  }
+
+  h3{
+    font-size: 20px !important;
+  }
+}
+@media print {
+  .page{
+    transform: scale(0.95);
+    transform-origin: top center;
+  }
+}
+/* Ajuste final para tragos-bebidas */
+
+.page{
+    transform: scale(0.96);
+    transform-origin: top center;
+}
+
+.grid{
+    gap: 10px !important;
+}
+
+.item{
+    font-size: 0.92rem !important;
+    line-height: 1.15 !important;
+}
+
+section{
+    padding: 10px !important;
+}
