@@ -1,171 +1,128 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>KUBO - Menú Digital</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@300;400;600;800&display=swap" rel="stylesheet">
-
-<style>
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-}
-
-body{
-  min-height:100vh;
-  font-family:'Montserrat',sans-serif;
-  background:#050505;
-  color:white;
-  overflow:hidden;
-}
-
-.hero{
-  min-height:100vh;
-  background:
-  linear-gradient(rgba(0,0,0,.62), rgba(0,0,0,.82)),
-    url("kubo-fondo.jpg");
-  background-size:cover;
-  background-position:center;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  padding:25px;
-  position:relative;
-}
-
-.hero::before{
-  content:"";
-  position:absolute;
-  inset:0;
-  background:
-    radial-gradient(circle at top, rgba(255,0,0,.35), transparent 35%),
-    linear-gradient(rgba(255,0,0,.07) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255,0,0,.07) 1px, transparent 1px);
-  background-size:auto, 38px 38px, 38px 38px;
-}
-
-.card{
-  position:relative;
-  z-index:2;
-  width:100%;
-  max-width:520px;
-  padding:34px 24px;
-  border:1px solid rgba(255,40,40,.7);
-  border-radius:28px;
-  background:rgba(0,0,0,.68);
-  backdrop-filter:blur(8px);
-  text-align:center;
-  box-shadow:
-    0 0 40px rgba(255,0,0,.28),
-    inset 0 0 30px rgba(255,0,0,.08);
-}
-
-.logo{
-  font-family:'Bebas Neue';
-  font-size:96px;
-  color:#ff2020;
-  letter-spacing:6px;
-  text-shadow:
-    0 0 8px white,
-    0 0 20px #ff2020,
-    0 0 50px #ff2020;
-}
-
-.sub{
-  font-family:'Bebas Neue';
-  font-size:28px;
-  letter-spacing:5px;
-  margin-top:-12px;
-}
-
-.line{
-  height:3px;
-  width:80%;
-  margin:22px auto;
-  background:#ff2020;
-  box-shadow:0 0 15px #ff2020, 0 0 35px #ff2020;
-}
-
-.phrase{
-  font-size:11px;
-  letter-spacing:3px;
-  color:#ddd;
-  margin-bottom:28px;
-}
-
-.btn{
-  display:block;
-  width:100%;
-  padding:20px;
-  margin:15px 0;
-  border-radius:18px;
-  border:1px solid rgba(255,40,40,.8);
-  background:rgba(10,10,10,.88);
-  color:white;
-  text-decoration:none;
-  font-family:'Bebas Neue';
-  font-size:30px;
-  letter-spacing:2px;
-  transition:.25s;
-  box-shadow:inset 0 0 18px rgba(255,0,0,.08);
-}
-
-.btn:hover{
-  transform:translateY(-3px) scale(1.02);
-  box-shadow:
-    0 0 18px #ff2020,
-    0 0 35px rgba(255,0,0,.7);
-}
-
-.footer{
-  margin-top:28px;
-  font-size:11px;
-  letter-spacing:3px;
-  color:#aaa;
-}
-
-@media(max-width:600px){
-  body{
-    overflow:auto;
-  }
-
-  .hero{
-    padding:18px;
-  }
-
-  .card{
-    border-radius:22px;
-  }
-}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KUBO - Carta Comidas</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
 
 <body>
 
-<div class="hero">
-  <div class="card">
+<div class="page">
+  <div class="stadium-line"></div>
 
-    <div class="logo">KUBO</div>
-    <div class="sub">MENÚ DIGITAL</div>
+  <button class="edit-btn" onclick="openEditor()">Editar precios</button>
 
-    <div class="line"></div>
+  <div class="editor-panel" id="editorPanel">
+    <h2>Editar precios</h2>
+    <div id="priceEditor"></div>
 
-    <div class="phrase">
-      COCINA • TRAGOS • FÚTBOL • AMIGOS
+    <button onclick="savePrices()" class="save-btn">Guardar precios</button>
+    <button onclick="closeEditor()" class="close-btn">Cerrar</button>
+  </div>
+
+  <header>
+    <h1>KUBO</h1>
+    <h2>BAR</h2>
+
+    <div class="slogan">
+      BUENA COMIDA · BUENA GENTE · BUENOS MOMENTOS
     </div>
 
-    <a class="btn" href="menu.html">🍔 COMIDAS</a>
-    <a class="btn" href="tragos-bebidas.html">🔥 TRAGOS Y BEBIDAS </a>
+    <div class="separator"></div>
+  </header>
 
-    <div class="footer">
-      KUBO BAR & COCINA
-    </div>
+  <div class="grid">
+
+    <section>
+      <h3>PARA PICAR</h3>
+
+      <div class="item" data-name="Nachos Kubo">Nachos Kubo <span>$ 12.000</span></div>
+      <div class="item" data-name="Tequeños (6 un.)">Tequeños (6 un.) <span>$ 19.000</span></div>
+      <div class="item" data-name="Chicken Fingers">Chicken Fingers <span>$ 18.000</span></div>
+      <div class="item" data-name="Mozzarella Sticks">Mozzarella Sticks <span>$ 19.000</span></div>
+      <div class="item" data-name="Dúo de Empanadas">Dúo de Empanadas <span>$ 14.000</span></div>
+      <div class="item" data-name="Papas Clásicas">Papas Clásicas <span>$ 14.000</span></div>
+      <div class="item featured" data-name="Papas Kubo">⭐ Papas Kubo <span>$ 19.000</span></div>
+
+      <h3>TABLAS</h3>
+
+      <div class="item" data-name="Tabla de Fiambres">Tabla de Fiambres <span>$ 38.000</span></div>
+      <div class="item" data-name="Tabla Caliente">Tabla Caliente <span>$ 70.000</span></div>
+
+      <h3>POSTRES</h3>
+
+      <div class="item" data-name="Chocotorta Clásica">Chocotorta Clásica <span>$ 12.000</span></div>
+      <div class="item" data-name="Cheesecake Frutos Rojos">Cheesecake Frutos Rojos <span>$ 13.000</span></div>
+      <div class="item" data-name="Crème Brûlée">Crème Brûlée <span>$ 12.000</span></div>
+      <div class="item" data-name="Budín de Pan">Budín de Pan <span>$ 10.000</span></div>
+
+    </section>
+
+    <section>
+      <h3>BURGERS</h3>
+      <p class="menu-note">Vienen con papas fritas.</p>
+
+      <div class="item" data-name="Clásica">Clásica <span>$ 18.000</span></div>
+      <div class="item" data-name="Blue Burger">Blue Burger <span>$ 23.000</span></div>
+      <div class="item featured" data-name="Kubo Burger">⭐ Kubo Burger <span>$ 24.000</span></div>
+      <div class="item" data-name="Veggie Burger">Veggie Burger <span>$ 16.000</span></div>
+
+      <h3>ENTREPANES</h3>
+      <p class="menu-note">Vienen con papas fritas.</p>
+
+      <div class="item" data-name="Mila Kubo">Mila Kubo <span>$ 30.000</span></div>
+      <div class="item" data-name="Crispy Chicken">Crispy Chicken <span>$ 16.000</span></div>
+      <div class="item" data-name="Lomo Kubo">Lomo Kubo <span>$ 25.000</span></div>
+      <div class="item" data-name="Veggie">Veggie <span>$ 15.000</span></div>
+
+      <h3>PIZZAS</h3>
+
+      <div class="item" data-name="Muzzarella">Muzzarella <span>$ 26.000</span></div>
+      <div class="item" data-name="Napolitana">Napolitana <span>$ 28.000</span></div>
+      <div class="item" data-name="Jamón Crudo y Rúcula">Jamón Crudo y Rúcula <span>$ 32.000</span></div>
+      <div class="item featured" data-name="Burrata Kubo">⭐ Burrata Kubo <span>$ 30.000</span></div>
+    </section>
+
+    <section>
+      <h3>ENSALADAS</h3>
+
+      <div class="item" data-name="César">César <span>$ 21.000</span></div>
+      <div class="item" data-name="Burrata Salad">Burrata Salad <span>$ 21.000</span></div>
+      <div class="item" data-name="Verde Kubo">Verde Kubo <span>$ 21.000</span></div>
+
+      <h3>PASTAS</h3>
+      <p class="menu-note">
+        Elegí tu salsa por $3.000: Manteca y salvia · Pesto · Boloñesa · Parisien.
+      </p>
+
+      <div class="item" data-name="Ñoquis">Ñoquis <span>$ 22.000</span></div>
+      <div class="item" data-name="Sorrentinos">Sorrentinos <span>$ 24.000</span></div>
+
+      <h3>PRINCIPALES</h3>
+      <p class="menu-note">
+        Elegí tu acompañamiento: puré rústico · papas fritas · ensalada.
+      </p>
+
+      <div class="item" data-name="Milanesa Clásica">Milanesa Clásica <span>$ 24.000</span></div>
+      <div class="item featured" data-name="Milanesa Kubo">⭐ Milanesa Kubo <span>$ 30.000</span></div>
+      <div class="item" data-name="Suprema Crispy Kubo">Suprema Crispy Kubo <span>$ 27.000</span></div>
+      <div class="item" data-name="Bife de Chorizo">Bife de Chorizo <span>$ 33.000</span></div>
+      <div class="item featured" data-name="Costillar de Asado">⭐ Costillar de Asado <span>$ 35.000</span></div>
+
+    </section>
 
   </div>
+
+  <footer>
+    COCINA • TRAGOS • NOCHES QUE SE QUEDAN
+  </footer>
+
 </div>
+
+<script src="app.js"></script>
 
 </body>
 </html>
